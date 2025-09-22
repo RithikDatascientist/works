@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Data Science Master Checklist (2025)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --card: #0b1220;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #22c55e;
+      --accent2: #38bdf8;
+      --warn: #f59e0b;
+      --border: #1f2937;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 24px; background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Arial, sans-serif;
+      line-height: 1.5;
+    }
+    h1 { margin: 0 0 12px; font-size: 24px; }
+    .sub { color: var(--muted); margin-bottom: 20px; }
+    .toolbar {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px;
+    }
+    button, label.btn {
+      background: var(--panel); color: var(--text); border: 1px solid var(--border);
+      padding: 8px 12px; border-radius: 8px; cursor: pointer;
+    }
+    button:hover, label.btn:hover { border-color: var(--accent2); }
+    input[type="file"] { display: none; }
+    .grid {
+      display: grid; gap: 12px; grid-template-columns: 1fr;
+    }
+    @media (min-width: 900px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    details.card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 0;
+    }
+    summary {
+      list-style: none; cursor: pointer; padding: 14px 16px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    .title { font-weight: 600; }
+    .progress {
+      display: flex; align-items: center; gap: 8px; color: var(--muted);
+      font-size: 12px; min-width: 160px;
+    }
+    .bar {
+      flex: 1; height: 8px; background: #0b1328; border: 1px solid var(--border); border-radius: 999px;
+      overflow: hidden;
+    }
+    .fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+    .content { padding: 12px 16px 16px; display: grid; gap: 8px; }
+    .row { display: flex; align-items: center; gap: 10px; }
+    .row input[type="checkbox"] { transform: translateY(1px) scale(1.05); }
+    .muted { color: var(--muted); font-size: 12px; }
+    .section-tools {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap;
+    }
+    .search {
+      margin: 10px 0 16px; display: flex; gap: 8px; flex-wrap: wrap;
+    }
+    .search input {
+      flex: 1; min-width: 240px; max-width: 600px; background: var(--panel); border: 1px solid var(--border);
+      color: var(--text); padding: 8px 10px; border-radius: 8px;
+    }
+    .foot { margin-top: 16px; color: var(--muted); font-size: 12px; }
+    .tag { color: var(--warn); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>Data Science Master Checklist (2025)</h1>
+  <div class="sub">Track skills, projects, and deployment readiness with persistent checkboxes, section progress, and backup/restore.</div>
+
+  <div class="toolbar">
+    <button id="expandAll">Expand all</button>
+    <button id="collapseAll">Collapse all</button>
+    <button id="resetAll">Reset</button>
+    <button id="exportBtn">Export</button>
+    <label class="btn" for="importFile">Import JSON</label>
+    <input id="importFile" type="file" accept="application/json">
+  </div>
+
+  <div class="search">
+    <input id="searchInput" type="text" placeholder="Search items (e.g., 'ARIMA', 'MLflow', 'telematics')" />
+    <div class="muted">Use search to highlight matching checklist items.</div>
+  </div>
+
+  <div id="grid" class="grid">
+    <!-- Foundations -->
+    <details class="card" open>
+      <summary>
+        <span class="title">Foundations</span>
+        <span class="progress"><span class="bar"><span class="fill"></span></span><span class="pct">0%</span></span>
+      </summary>
+      <div class="content">
+        <div class="section-tools">
+          <button class="selectAll">Select all</button>
+          <button class="clearAll">Clear</button>
+        </div>
+        <label class="row"><input type="checkbox" id="f_py"> Python (functions, OOP, typing), NumPy, pandas (merge/reshape/groupby)</label>
+        <label class="row"><input type="checkbox" id="f_sql"> SQL (joins, windows, CTE), query optimization basics</label>
+        <label class="row"><input type="checkbox" id="f_git"> CLI, Git, environments (venv/conda), packaging</label>
+      </div>
+    </details>
+
+    <!-- Statistics & Math -->
+    <details class="card">
+      <summary>
+        <span class="title">Statistics & Math</span>
+        <span class="progress"><span class="bar"><span class="fill"></span></span><span class="pct">0%</span></span>
+      </summary>
+      <div class="content">
+        <div class="section-tools">
+          <button class="selectAll">Select all</button>
+          <button class="clearAll">Clear</button>
+        </div>
+        <label class="row"><input type="checkbox" id="s_prob"> Probability & distributions (Gaussian/Bernoulli/Poisson), expectation/variance</label>
+        <label class="row"><input type="checkbox" id="s_est"> Estimation (MLE/MAP), bias–variance, regularization</label>
+        <label class="row"><input type="checkbox" id="s_ht"> Hypothesis tests (z/t/chi-square), ANOVA, nonparametrics</label>
+        <label class="row"><input type="checkbox" id="s_ci"> Confidence intervals, power, effect size</label>
+        <label class="row"><input type="checkbox" id="s_diag"> Regression diagnostics; feature selection</label>
+        <label class="row"><input type="checkbox" id="s_bayes"> Bayesian basics; MCMC overview</label>
+        <label class="row"><input type="checkbox" id="s_doe"> Design of Experiments & A/B testing</label>
+      </div>
+    </details>
+
+    <!-- EDA & Visualization -->
+    <details class="card">
+      <summary>
+        <span class="title">EDA & Visualization</span>
+        <span class="progress"><span class="bar"><span class="fill"></span></span><span class="pct">0%</span></span>
+      </summary>
+      <div class="content">
+        <div class="section-tools">
+          <button class="selectAll">Select all</button>
+          <button class="clearAll">Clear</button>
+        </div>
+        <label class="row"><input type="checkbox" id="e_prof"> Data validation & profiling; missing data strategies</label>
+        <label class="row"><input type="checkbox" id="e_viz"> Visual EDA; storytelling</label>
+        <label class="row"><input type="checkbox" id="e_tools"> Matplotlib/Seaborn/Plotly; Tableau/Power BI</label>
+        <label class="row"><input type="checkbox" id="e_fe"> Feature engineering patterns; leakage checks</label>
+      </div>
+    </details>
+
+    <!-- Supervised Learning -->
+    <details class="card">
+      <summary>
+        <span class="title">Supervised Learning</span>
+        <span class="progress"><span class="bar"><span class="fill"></span></span><span class="pct">0%</span></span>
+      </summary>
+      <div class="content">
+        <div class="section-tools">
+          <button class="selectAll">Select all</button>
+          <button class="clearAll">Clear</button>
+        </div>
+        <label class="row"><input type="checkbox" id="sup_lin"> Linear/Multiple Regression; Ridge/Lasso/Elastic Net</label>
+        <label class="row"><input type="checkbox" id="sup_clf"> Logistic Regression; Naive Bayes; k-NN; SVM</label>
+        <label class="row"><input type="checkbox" id="sup_tree"> Decision Trees; Random Forests; Gradient Boosting (XGBoost/LightGBM/CatBoost)</label>
+        <label class="row"><input type="checkbox" id="sup_val"> Validation (CV/nested CV); calibration; class imbalance</label>
+        <label class="row"><input type="checkbox" id="sup_metrics"> Metrics: RMSE/MAE, AUC/PR, F1, MCC, recall@k</label>
+      </div>
+    </details>
+
+    <!-- Unsupervised Learning -->
+    <details class="card">
+      <summary>
+        <span class="title">Unsupervised Learning</span>
+        <span class="progress"><span class="bar"><span class="fill"></span></span><span class="pct">0%</span></span>
+      </summary>
+      <div class="content">
+        <div class="section-tools">
+          <button class="selectAll">Select all</button>
+          <button class="clearAll">Clear</button>
+        </div>
+        <label class="row"><input type="checkbox" id="uns_kmeans"> Clustering: k-means, hierarchical, DBSCAN</label>
+        <label class="row"><input type="checkbox" id="uns_dr"> Dimensionality reduction: PCA, t-SNE/UMAP</label>
+        <label class="row"><input type="checkbox" id="uns_anom"> Anomaly detection: Isolation Forest, One-Class SVM, Autoencoders</label>
+      </div>
+    </details>
+
+    <!-- Time Series -->
+    <details class="card">
+      <summary>
+        <span class="title">Time Series</span>
+        <span class="progress"><span class="bar"><span class="fill"></span></span><span class="pct">0%</span></span>
+      </summary>
+      <div class="content">
+        <div class="section-tools">
+          <button class="selectAll">Select all</button>
+          <button class="clearAll">Clear</button>
+        </div>
+        <label class="row"><input type="checkbox" id="ts_basics"> Stationarity, ACF/PACF, decomposition</label>
+        <label class="row"><input type="checkbox" id="ts_classic"> ETS/ARIMA/SARIMA, Prophet</label>
+        <label class="row"><input type="checkbox" id="ts_dl"> LSTM/GRU/Temporal CNN; lag/rolling features</label>
+        <label class="row"><input type="checkbox" id="ts_eval"> Backtesting; MAPE/sMAPE, MASE, pinball loss</label>
+        <label class="row"><input type="checkbox" id="ts_stream"> Streaming and real-time considerations</label>
+      </div>
+    </details>
+
+    <!-- NLP & CV -->
+    <details class="card">
+      <summary>
+        <span class="title">NLP & Computer Vision</span>
+        <span class="progress"><span class="bar"><span class="fill"></span></span><span class="pct">0%</span></span>
+      </summary>
+      <div class="content">
+        <div class="section-tools">
+          <button class="selectAll">Select all</button>
+          <button class="clearAll">Clear</button>
+        </div>
+        <label class="row"><input type="checkbox" id="nlp_core"> NLP: tokenization, embeddings, topics, sequence labeling</label>
+        <label class="row"><input type="checkbox" id="nlp_tx"> Transformers (BERT-style); PEFT/LoRA basics</label>
+        <label class="row"><input type="checkbox" id="cv_core"> CV: CNNs, transfer learning, defect detection</label>
+        <label class="row"><input type="checkbox" id="doc_ai"> OCR/document intelligence (logs, work orders)</label>
+      </div>
+    </details>
+
+    <!-- Recommenders & Optimization -->
+    <details class="card">
+      <summary>
+        <span class="title">Recommenders & Optimization</span>
+        <span class="progress"><span class="bar"><span class="fill"></span></span><span class="pct">0%</span></span>
+      </summary>
+      <div class="content">
+        <div class="section-tools">
+          <button class="selectAll">Select all</button>
+          <button class="clearAll">Clear</button>
+        </div>
+        <label class="row"><input type="checkbox" id="rec_cf"> Collaborative filtering, matrix factorization</label>
+        <label class="row"><input type="checkbox" id="opt_lp"> Linear/Integer programming; basic RL/control</label>
+      </div>
+    </details>
+
+    <!-- MLOps & Cloud -->
+    <details class="card">
+      <summary>
+        <span class="title">MLOps & Cloud</span>
+        <span class="progress"><span class="bar"><span class="fill"></span></span><span class="pct">0%</span></span>
+      </summary>
+      <div class="content">
+        <div class="section-tools">
+          <button class="selectAll">Select all</button>
+          <button class="clearAll">Clear</button>
+        </div>
+        <label class="row"><input type="checkbox" id="mo_exp"> Experiment tracking: MLflow; model registry</label>
+        <label class="row"><input type="checkbox" id="mo_serv"> FastAPI, Docker; batch vs real-time serving</label>
+        <label class="row"><input type="checkbox" id="mo_cicd"> CI/CD for ML; testing; data contracts</label>
+        <label class="row"><input type="checkbox" id="mo_mon"> Monitoring: data drift, concept drift, performance & cost</label>
+        <label class="row"><input type="checkbox" id="mo_spark"> Spark/Databricks; feature stores; lakehouse</label>
+        <label class="row"><input type="checkbox" id="mo_cloud"> Cloud basics: AWS/GCP/Azure (storage, compute, IAM)</label>
+      </div>
+    </details>
+
+    <!-- Data Engineering -->
+    <details class="card">
+      <summary>
+        <span class="title">Data Engineering</span>
+        <span class="progress"><span class="bar"><span class="fill"></span></span><span class="pct">0%</span></span>
+      </summary>
+      <div class="content">
+        <div class="section-tools">
+          <button class="selectAll">Select all</button>
+          <button class="clearAll">Clear</button>
+        </div>
+        <label class="row"><input type="checkbox" id="de_wh"> Warehousing (Snowflake/BigQuery); OLTP/OLAP</label>
+        <label class="row"><input type="checkbox" id="de_elt"> ELT/ETL: Airflow/Prefect; dbt</label>
+        <label class="row"><input type="checkbox" id="de_stream"> Streaming: Kafka/Flink fundamentals</label>
+        <label class="row"><input type="checkbox" id="de_geo"> Geospatial/remote sensing</label>
+      </div>
+    </details>
+
+    <!-- Industrial & Energy Domain -->
+    <details class="card">
+      <summary>
+        <span class="title">Industrial & Energy Domain</span>
+        <span class="progress"><span class="bar"><span class="fill"></span></span><span class="pct">0%</span></span>
+      </summary>
+      <div class="content">
+        <div class="section-tools">
+          <button class="selectAll">Select all</button>
+          <button class="clearAll">Clear</button>
+        </div>
+        <label class="row"><input type="checkbox" id="dom_tel"> Telematics reliability: failure prediction, maintenance KPIs</label>
+        <label class="row"><input type="checkbox" id="dom_proc"> Process optimization & energy intensity (smart refinery/manufacturing)</label>
+        <label class="row"><input type="checkbox" id="dom_oil"> Drilling/production analytics; lift optimization</label>
+        <label class="row"><input type="checkbox" id="dom_safe"> Safety/compliance: leak detection, emissions analytics</label>
+        <label class="row"><input type="checkbox" id="dom_procmin"> SAP/process mining (MM/WM/SD/PP/PM/FICO), Celonis overview</label>
+      </div>
+    </details>
+
+    <!-- Portfolio & Projects -->
+    <details class="card">
+      <summary>
+        <span class="title">Portfolio & Projects</span>
+        <span class="progress"><span class="bar"><span class="fill"></span></span><span class="pct">0%</span></span>
+      </summary>
+      <div class="content">
+        <div class="section-tools">
+          <button class="selectAll">Select all</button>
+          <button class="clearAll">Clear</button>
+        </div>
+        <label class="row"><input type="checkbox" id="p_pm"> Predictive maintenance project (sensor/telematics)</label>
+        <label class="row"><input type="checkbox" id="p_ts"> Time-series forecasting project (demand/energy/process)</label>
+        <label class="row"><input type="checkbox" id="p_nlp"> NLP/CV project (logs or defect detection)</label>
+        <label class="row"><input type="checkbox" id="p_dash"> Stakeholder dashboard (Tableau/Power BI)</label>
+        <label class="row"><input type="checkbox" id="p_deploy"> Deploy one model + monitoring</label>
+        <label class="row"><input type="checkbox" id="p_case"> Case study write-up (problem → method → result → decision)</label>
+      </div>
+    </details>
+
+    <!-- Interview Prep -->
+    <details class="card">
+      <summary>
+        <span class="title">Interview Prep</span>
+        <span class="progress"><span class="bar"><span class="fill"></span></span><span class="pct">0%</span></span>
+      </summary>
+      <div class="content">
+        <div class="section-tools">
+          <button class="selectAll">Select all</button>
+          <button class="clearAll">Clear</button>
+        </div>
+        <label class="row"><input type="checkbox" id="i_sql"> SQL drills (joins/windows/CTEs), tuning basics</label>
+        <label class="row"><input type="checkbox" id="i_theory"> Stats/ML theory; tradeoffs & failure modes</label>
+        <label class="row"><input type="checkbox" id="i_takehome"> Take-home template; reproducible pipeline</label>
+        <label class="row"><input type="checkbox" id="i_design"> DS/ML system design; serving/monitoring</label>
+        <label class="row"><input type="checkbox" id="i_behavior"> Behavioral stories (STAR) with measurable impact</label>
+      </div>
+    </details>
+  </div>
+
+  <div class="foot">
+    Tip: Aim to complete 6–10 items/week and ship one domain‑aligned mini‑project per month for steady progress. <span class="tag">Autosaves</span> via localStorage.
+  </div>
+
+  <script>
+    (function(){
+      const STORE_KEY = 'dsChecklist_v1';
+      const grid = document.getElementById('grid');
+      const searchInput = document.getElementById('searchInput');
+
+      function getState(){ try { return JSON.parse(localStorage.getItem(STORE_KEY) || '{}'); } catch(e){ return {}; } }
+      function setState(state){ localStorage.setItem(STORE_KEY, JSON.stringify(state)); }
+
+      function allCheckboxes(){ return Array.from(grid.querySelectorAll('input[type="checkbox"]')); }
+      function sectionFrom(el){ return el.closest('details.card'); }
+      function sectionCheckboxes(section){ return Array.from(section.querySelectorAll('input[type="checkbox"]')); }
+
+      function updateSectionProgress(section){
+        const boxes = sectionCheckboxes(section);
+        const total = boxes.length;
+        const done = boxes.filter(b => b.checked).length;
+        const pct = total ? Math.round((done/total)*100) : 0;
+        const fill = section.querySelector('.fill');
+        const pctEl = section.querySelector('.pct');
+        if(fill) fill.style.width = pct + '%';
+        if(pctEl) pctEl.textContent = pct + '%';
+      }
+
+      function updateAllProgress(){
+        Array.from(grid.querySelectorAll('details.card')).forEach(updateSectionProgress);
+      }
+
+      function load(){
+        const state = getState();
+        allCheckboxes().forEach(cb => { if(state.hasOwnProperty(cb.id)) cb.checked = !!state[cb.id]; });
+        updateAllProgress();
+      }
+
+      function save(){
+        const state = getState();
+        allCheckboxes().forEach(cb => state[cb.id] = cb.checked);
+        setState(state);
+        updateAllProgress();
+      }
+
+      // Event wiring
+      grid.addEventListener('change', (e) => {
+        if(e.target.type === 'checkbox'){ save(); }
+      });
+
+      // Section tools
+      grid.addEventListener('click', (e) => {
+        if(e.target.classList.contains('selectAll')){
+          const sec = e.target.closest('details.card');
+          sectionCheckboxes(sec).forEach(cb => cb.checked = true);
+          save();
+        }
+        if(e.target.classList.contains('clearAll')){
+          const sec = e.target.closest('details.card');
+          sectionCheckboxes(sec).forEach(cb => cb.checked = false);
+          save();
+        }
+      });
+
+      // Expand/collapse
+      document.getElementById('expandAll').addEventListener('click', () => {
+        Array.from(grid.querySelectorAll('details.card')).forEach(d => d.open = true);
+      });
+      document.getElementById('collapseAll').addEventListener('click', () => {
+        Array.from(grid.querySelectorAll('details.card')).forEach(d => d.open = false);
+      });
+
+      // Reset
+      document.getElementById('resetAll').addEventListener('click', () => {
+        if(confirm('Clear all progress? This cannot be undone.')){
+          localStorage.removeItem(STORE_KEY);
+          allCheckboxes().forEach(cb => cb.checked = false);
+          updateAllProgress();
+        }
+      });
+
+      // Export
+      document.getElementById('exportBtn').addEventListener('click', () => {
+        const data = JSON.stringify(getState(), null, 2);
+        const blob = new Blob([data], {type: 'application/json'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'ds_checklist_progress.json';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      });
+
+      // Import
+      const importFile = document.getElementById('importFile');
+      importFile.addEventListener('change', (e) => {
+        const file = e.target.files;
+        if(!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          try {
+            const obj = JSON.parse(reader.result);
+            setState(obj);
+            load();
+            alert('Import successful!');
+          } catch(err){
+            alert('Invalid JSON file.');
+          } finally {
+            importFile.value = '';
+          }
+        };
+        reader.readAsText(file);
+      });
+
+      // Search highlight
+      searchInput.addEventListener('input', () => {
+        const q = searchInput.value.trim().toLowerCase();
+        const labels = Array.from(grid.querySelectorAll('.content label'));
+        labels.forEach(l => {
+          const text = l.textContent.toLowerCase();
+          l.style.outline = '';
+          l.style.background = '';
+          if(q && text.includes(q)){
+            l.style.outline = '1px solid var(--accent2)';
+            l.style.background = 'rgba(56,189,248,0.08)';
+            const sec = l.closest('details.card');
+            if(sec) sec.open = true;
+          }
+        });
+      });
+
+      // Initial load
+      load();
+    })();
+  </script>
+</body>
+</html>

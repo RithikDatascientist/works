@@ -1,0 +1,17 @@
+2025-09-26 17:02:51,678 - users_db - INFO - NODE-00: DB_INIT users db ready
+2025-09-26 17:04:19,801 - users_db - INFO - NODE-01: sign_up -> user created 68d67a3bdac60089b0ca7ae5
+2025-09-26 17:04:19,806 - users_db - INFO - NODE-02: user_registration -> issued verify token for arfith2906@gmail.com
+2025-09-26 17:17:02,459 - users_db - INFO - NODE-00: DB_INIT users db ready
+2025-09-26 17:24:43,877 - users_db - INFO - NODE-01: sign_up -> user created 68d67f0304fd3ff909cbcb9a
+2025-09-26 17:24:43,878 - users_db - INFO - NODE-02: user_registration -> issued verify token for arfith2906@gmail.com
+2025-09-26 17:29:45,382 - users_db - INFO - NODE-00: DB_INIT users db ready
+2025-09-26 17:29:46,610 - users_db - INFO - NODE-00: DB_INIT users db ready
+2025-09-26 17:31:24,928 - users_db - INFO - NODE-00: DB_INIT users db ready
+2025-09-26 17:31:26,123 - users_db - INFO - NODE-00: DB_INIT users db ready
+2025-09-26 17:31:41,439 - users_db - INFO - NODE-00: DB_INIT users db ready
+2025-09-26 17:32:39,300 - users_db - INFO - NODE-01: sign_up -> user created 68d680df6329a50d0c69d32b
+2025-09-26 17:32:39,301 - users_db - INFO - NODE-02: user_registration -> issued verify token for arfith2906@gmail.com
+2025-09-26 17:32:59,570 - users_db - INFO - NODE-02: user_registration -> set verified for arfith2906@gmail.com matched=1
+2025-09-26 17:36:48,559 - users_db - INFO - NODE-01: sign_up -> user created 68d681d86329a50d0c69d32d
+2025-09-26 17:36:48,561 - users_db - INFO - NODE-02: user_registration -> issued verify token for rithikgithub03@gmail.com
+2025-09-26 17:37:14,785 - users_db - INFO - NODE-02: user_registration -> set verified for rithikgithub03@gmail.com matched=1

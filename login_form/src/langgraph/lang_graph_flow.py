@@ -1,230 +1,287 @@
+# src/langgraph/lang_graph_flow.py
 from typing import Dict
+import os
+import logging
+from datetime import datetime
+
+import requests
 from langgraph.graph import StateGraph, END
 
-def logfile(message: str):
-    """Simple logger utility"""
-    print(message)
+# -------------------------
+# Logging (creates logs on import)
+# -------------------------
+LOG_DIR = os.getenv("LOG_DIR", "logs")
+os.makedirs(LOG_DIR, exist_ok=True)
+_ts = datetime.now().strftime("%Y%m%d")
+_logger = logging.getLogger("langgraph")
+_logger.setLevel(logging.INFO)
+if not _logger.handlers:
+    fh = logging.FileHandler(f"{LOG_DIR}/langgraph_auth_{_ts}.log")
+    ch = logging.StreamHandler()
+    fmt = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+    fh.setFormatter(fmt); ch.setFormatter(fmt)
+    _logger.addHandler(fh); _logger.addHandler(ch)
 
+API_BASE = os.getenv("FASTAPI_BASE_URL", "http://localhost:8000")
 
-# ---------------------
-# NODES
-# ---------------------
-
-def sign_up(state: Dict) -> Dict:
-    """ Node1: sign_up - New user registration via MCP. """
-    # step1: Collect user details via MCP
-    # step2: Validate input fields
-    # step3: Create new account in system
+def _post(path: str, payload: Dict) -> Dict:
     try:
-        logfile("SIGN_UP: Registration completed via MCP")
-        return {"status": "registered", "flag": "yes"}
+        r = requests.post(f"{API_BASE}{path}", json=payload, timeout=20)
+        if r.headers.get("content-type","").startswith("application/json"): return r.json()
+        return {"status":"error","message":r.text}
     except Exception as e:
-        logfile(f"SIGN_UP: Failed - {str(e)}")
+        _logger.error("HTTP POST %s failed: %s", path, e)
+        return {"status":"error","message":str(e)}
+
+def _get(path: str) -> Dict:
+    try:
+        r = requests.get(f"{API_BASE}{path}", timeout=15)
+        if r.headers.get("content-type","").startswith("application/json"): return r.json()
+        return {"status":"error","message":r.text}
+    except Exception as e:
+        _logger.error("HTTP GET %s failed: %s", path, e)
+        return {"status":"error","message":str(e)}
+
+# -------------------------
+# NODES
+# -------------------------
+def node_01_sign_up(state: Dict) -> Dict:
+    """
+    Node1: sign_up - New user registration via API.
+    step1: Collect user details
+    step2: Validate inputs (handled in API/UI)
+    step3: Create new account and issue OTP
+    """
+    try:
+        payload = {
+            "name": state["full_name"],
+            "email": state["email"],
+            "phone": state["phone"],
+            "password": state["password"],
+            "plan_id": state.get("plan_id", "free"),
+        }
+        _logger.info("NODE-01: sign_up -> register %s", payload.get("email"))
+        r = _post("/auth/register", payload)
+        if r.get("status") == "success":
+            return {"status": "registered", "flag": "yes", "user_id": r.get("user_id")}
+        return {"status": "failed", "flag": "no", "error": r.get("message")}
+    except Exception as e:
+        _logger.error("NODE-01: sign_up failed %s", e)
         return {"status": "failed", "flag": "no"}
 
-
-def user_registration(state: Dict) -> Dict:
-    """ Node2: user_registration - Confirm user registration. """
-    # step1: Send verification request via MCP
-    # step2: Validate OTP or email response
-    # step3: Mark user as verified
+def node_02_user_registration(state: Dict) -> Dict:
+    """
+    Node2: user_registration - Confirm user registration via OTP.
+    step1: Send/collect verification token
+    step2: Validate OTP
+    step3: Mark user verified
+    """
     if state.get("flag") != "yes":
-        logfile("USER_REGISTRATION: Skipped due to previous failure")
+        _logger.info("NODE-02: user_registration -> skipped (prev failure)")
         return {"registration_status": "skipped", "flag": "no"}
     try:
-        logfile("USER_REGISTRATION: Verification successful")
-        return {"registration_status": "verified", "flag": "yes"}
+        payload = {"email": state["email"], "otp_code": state["otp_code"]}
+        _logger.info("NODE-02: user_registration -> verify %s", payload.get("email"))
+        r = _post("/auth/verify", payload)
+        ok = r.get("status") == "success"
+        return {"registration_status": "verified" if ok else "failed", "flag": "yes" if ok else "no"}
     except Exception as e:
-        logfile(f"USER_REGISTRATION: Failed - {str(e)}")
+        _logger.error("NODE-02: user_registration failed %s", e)
         return {"registration_status": "failed", "flag": "no"}
 
-
-def sign_in(state: Dict) -> Dict:
-    """ Node3: sign_in - Existing user login via MCP. """
-    # step1: Collect credentials from user
-    # step2: Validate credentials via MCP
-    # step3: Log authentication status
+def node_03_sign_in(state: Dict) -> Dict:
+    """
+    Node3: sign_in - Existing user login via API.
+    step1: Collect credentials
+    step2: Validate credentials
+    step3: Log authentication status
+    """
     try:
-        logfile("SIGN_IN: Login successful via MCP")
-        return {"login_status": "success", "flag": "yes"}
+        payload = {"email_or_phone": state["email_or_phone"], "password": state["password"]}
+        _logger.info("NODE-03: sign_in -> login %s", payload.get("email_or_phone"))
+        r = _post("/auth/login", payload)
+        if r.get("status") == "success":
+            return {"login_status": "success", "flag": "yes", "user": r.get("user")}
+        elif r.get("status") == "verification_required":
+            return {"login_status": "verification_required", "flag": "no", "email": r.get("email")}
+        return {"login_status": "failed", "flag": "no", "error": r.get("message")}
     except Exception as e:
-        logfile(f"SIGN_IN: Failed - {str(e)}")
+        _logger.error("NODE-03: sign_in failed %s", e)
         return {"login_status": "failed", "flag": "no"}
 
-
-def forgot_password(state: Dict) -> Dict:
-    """ Node4: forgot_password - Reset password using MCP. """
-    # step1: Collect email for reset
-    # step2: Send reset link or OTP
-    # step3: Confirm new password setup
+def node_04_forgot_password(state: Dict) -> Dict:
+    """
+    Node4: forgot_password - Reset password using API.
+    step1: Collect email/phone
+    step2: Send reset token
+    step3: Confirm reset (separate page)
+    """
     try:
-        logfile("FORGOT_PASSWORD: Password reset completed via MCP")
-        return {"password_reset": "done", "flag": "yes"}
+        payload = {"email": state["email"], "phone": state["phone"]}
+        _logger.info("NODE-04: forgot_password -> request %s", payload.get("email"))
+        r = _post("/auth/forgot-password", payload)
+        ok = r.get("status") == "success"
+        return {"password_reset": "sent" if ok else "failed", "flag": "yes" if ok else "no"}
     except Exception as e:
-        logfile(f"FORGOT_PASSWORD: Failed - {str(e)}")
+        _logger.error("NODE-04: forgot_password failed %s", e)
         return {"password_reset": "failed", "flag": "no"}
 
-
-def user_login_validation(state: Dict) -> Dict:
-    """ Node5: user_login_validation - Validate login and session. """
-    # step1: Verify user credentials
-    # step2: Check if account is active
-    # step3: Start user session
-    if state.get("flag") != "yes":
-        logfile("USER_LOGIN_VALIDATION: Skipped due to previous failure")
-        return {"session": "inactive", "flag": "no"}
-    try:
-        logfile("USER_LOGIN_VALIDATION: Session started successfully")
+def node_05_user_login_validation(state: Dict) -> Dict:
+    """
+    Node5: user_login_validation - Validate login and session.
+    """
+    if state.get("login_status") == "success":
+        _logger.info("NODE-05: user_login_validation -> session active")
         return {"session": "active", "flag": "yes"}
-    except Exception as e:
-        logfile(f"USER_LOGIN_VALIDATION: Failed - {str(e)}")
-        return {"session": "failed", "flag": "no"}
+    _logger.info("NODE-05: user_login_validation -> inactive")
+    return {"session": "inactive", "flag": "no"}
 
-
-def subscription_validation(state: Dict) -> Dict:
-    """ Node6: subscription_validation - Check subscription via MCP. """
-    # step1: Fetch subscription details
-    # step2: Determine current status (active, expired, none)
-    # step3: Log subscription state
+def node_06_subscription_validation(state: Dict) -> Dict:
+    """
+    Node6: subscription_validation - Check subscription via API.
+    step1: Fetch subscription
+    step2: Determine status (active/none)
+    """
     if state.get("flag") != "yes":
-        logfile("SUBSCRIPTION_VALIDATION: Skipped due to previous failure")
+        _logger.info("NODE-06: subscription_validation -> skipped")
         return {"subscription": "unknown", "flag": "no"}
     try:
-        subscription = state.get("subscription")
-        logfile(f"SUBSCRIPTION_VALIDATION: {subscription}")
-        return {"subscription": subscription, "flag": "yes"}
+        uid = state.get("user",{}).get("id") or state.get("user_id")
+        r = _get(f"/user/{uid}/subscription")
+        sub = r.get("subscription", {}) if r else {}
+        status = "active" if sub.get("plan_id") else "none"
+        _logger.info("NODE-06: subscription status %s for %s", status, uid)
+        return {"subscription": status, "flag": "yes", "sub_detail": sub, "user_id": uid}
     except Exception as e:
-        logfile(f"SUBSCRIPTION_VALIDATION: Failed - {str(e)}")
+        _logger.error("NODE-06: subscription_validation failed %s", e)
         return {"subscription": "failed", "flag": "no"}
 
-
-def subscription_plan(state: Dict) -> Dict:
-    """ Node7: subscription_plan - Handle plan purchase/renewal. """
-    # step1: Present available subscription plans
-    # step2: Capture user selection
-    # step3: Process subscription payment
+def node_07_subscription_plan(state: Dict) -> Dict:
+    """
+    Node7: subscription_plan - handle plan purchase/renewal (UI-driven).
+    This node acknowledges routing to UI for upgrade; API call happens from UI.
+    """
     if state.get("flag") != "yes":
-        logfile("SUBSCRIPTION_PLAN: Skipped due to previous failure")
+        _logger.info("NODE-07: subscription_plan -> not eligible")
         return {"subscription_status": "not_subscribed", "flag": "no"}
-    try:
-        logfile("SUBSCRIPTION_PLAN: Subscription purchased successfully")
-        return {"subscription_status": "subscribed", "flag": "yes"}
-    except Exception as e:
-        logfile(f"SUBSCRIPTION_PLAN: Failed - {str(e)}")
-        return {"subscription_status": "failed", "flag": "no"}
+    _logger.info("NODE-07: subscription_plan -> awaiting UI upgrade flow")
+    return {"subscription_status": "pending", "flag": "yes"}
 
-
-def subscribed(state: Dict) -> Dict:
-    """ Node8: subscribed - Confirm subscription active. """
-    # step1: Confirm subscription status via MCP
-    # step2: Update user privileges
-    # step3: Grant access to services
+def node_08_subscribed(state: Dict) -> Dict:
+    """
+    Node8: subscribed - Confirm subscription active and grant access.
+    """
     if state.get("flag") != "yes":
-        logfile("SUBSCRIBED: Skipped due to previous failure")
+        _logger.info("NODE-08: subscribed -> denied")
         return {"access": "denied", "flag": "no"}
-    try:
-        logfile("SUBSCRIBED: Access granted")
-        return {"access": "granted", "flag": "yes"}
-    except Exception as e:
-        logfile(f"SUBSCRIBED: Failed - {str(e)}")
-        return {"access": "failed", "flag": "no"}
+    _logger.info("NODE-08: subscribed -> granted")
+    return {"access": "granted", "flag": "yes"}
 
-
-def user_selection(state: Dict) -> Dict:
-    """ Node9: user_selection - Select service option. """
-    # step1: Present choices (Image Processing, Report Processing)
-    # step2: Capture user choice
-    # step3: Route to selected workflow
+def node_09_user_selection(state: Dict) -> Dict:
+    """
+    Node9: user_selection - route to selected workflow.
+    """
     if state.get("flag") != "yes":
-        logfile("USER_SELECTION: Skipped due to previous failure")
+        _logger.info("NODE-09: user_selection -> skipped")
         return {"selection": None, "flag": "no"}
-    try:
-        choice = state.get("selection")
-        logfile(f"USER_SELECTION: User selected {choice}")
-        return {"selection": choice, "flag": "yes"}
-    except Exception as e:
-        logfile(f"USER_SELECTION: Failed - {str(e)}")
-        return {"selection": None, "flag": "no"}
+    choice = state.get("selection")
+    _logger.info("NODE-09: user_selection -> %s", choice)
+    return {"selection": choice, "flag": "yes"}
 
-
-def image_processing(state: Dict) -> Dict:
-    """ Node10: image_processing - Handle image workflow. """
+def node_10_image_processing(state: Dict) -> Dict:
+    """
+    Node10: image_processing - record feature usage via API.
+    """
     if state.get("flag") != "yes":
-        logfile("IMAGE_PROCESSING: Skipped due to previous failure")
+        _logger.info("NODE-10: image_processing -> skipped")
         return {"task": "not_processed", "flag": "no"}
     try:
-        logfile("IMAGE_PROCESSING: Completed image processing workflow")
+        uid = state.get("user_id") or state.get("user",{}).get("id")
+        _logger.info("NODE-10: image_processing -> record for %s", uid)
+        _post(f"/user/{uid}/use-feature", {"feature": "image"})
         return {"task": "image_done", "flag": "yes"}
     except Exception as e:
-        logfile(f"IMAGE_PROCESSING: Failed - {str(e)}")
+        _logger.error("NODE-10: image_processing failed %s", e)
         return {"task": "failed", "flag": "no"}
 
-
-def report_processing(state: Dict) -> Dict:
-    """ Node11: report_processing - Handle report workflow. """
+def node_11_report_processing(state: Dict) -> Dict:
+    """
+    Node11: report_processing - record feature usage via API.
+    """
     if state.get("flag") != "yes":
-        logfile("REPORT_PROCESSING: Skipped due to previous failure")
+        _logger.info("NODE-11: report_processing -> skipped")
         return {"task": "not_processed", "flag": "no"}
     try:
-        logfile("REPORT_PROCESSING: Completed report processing workflow")
+        uid = state.get("user_id") or state.get("user",{}).get("id")
+        _logger.info("NODE-11: report_processing -> record for %s", uid)
+        _post(f"/user/{uid}/use-feature", {"feature": "report"})
         return {"task": "report_done", "flag": "yes"}
     except Exception as e:
-        logfile(f"REPORT_PROCESSING: Failed - {str(e)}")
+        _logger.error("NODE-11: report_processing failed %s", e)
         return {"task": "failed", "flag": "no"}
 
-
-# ---------------------
+# -------------------------
 # GRAPH
-# ---------------------
-
+# -------------------------
 workflow = StateGraph(dict)
 
-# Add nodes
-workflow.add_node("sign_up", sign_up)                      # Node1
-workflow.add_node("user_registration", user_registration)  # Node2
-workflow.add_node("sign_in", sign_in)                      # Node3
-workflow.add_node("forgot_password", forgot_password)      # Node4
-workflow.add_node("user_login_validation", user_login_validation)  # Node5
-workflow.add_node("subscription_validation", subscription_validation)  # Node6
-workflow.add_node("subscription_plan", subscription_plan)  # Node7
-workflow.add_node("subscribed", subscribed)                # Node8
-workflow.add_node("user_selection", user_selection)        # Node9
-workflow.add_node("image_processing", image_processing)    # Node10
-workflow.add_node("report_processing", report_processing)  # Node11
+# Add nodes with explicit numbering in identifiers
+workflow.add_node("sign_up", node_01_sign_up)                    # Node1
+workflow.add_node("user_registration", node_02_user_registration) # Node2
+workflow.add_node("sign_in", node_03_sign_in)                    # Node3
+workflow.add_node("forgot_password", node_04_forgot_password)    # Node4
+workflow.add_node("user_login_validation", node_05_user_login_validation)  # Node5
+workflow.add_node("subscription_validation", node_06_subscription_validation)  # Node6
+workflow.add_node("subscription_plan", node_07_subscription_plan) # Node7
+workflow.add_node("subscribed", node_08_subscribed)              # Node8
+workflow.add_node("user_selection", node_09_user_selection)      # Node9
+workflow.add_node("image_processing", node_10_image_processing)  # Node10
+workflow.add_node("report_processing", node_11_report_processing) # Node11
 
-# Add edges
+# Edges
 workflow.add_edge("sign_up", "user_registration")
 workflow.add_edge("user_registration", "user_login_validation")
-
 workflow.add_edge("sign_in", "user_login_validation")
 workflow.add_edge("forgot_password", "user_login_validation")
-
 workflow.add_edge("user_login_validation", "subscription_validation")
+
+# Conditional branch based on subscription status
+def _route_sub(x: Dict) -> str:
+    status = x.get("subscription", "none")
+    return status
 
 workflow.add_conditional_edges(
     "subscription_validation",
-    lambda x: x["subscription"],
+    _route_sub,
     {
         "active": "subscribed",
         "expired": "subscription_plan",
-        "none": "subscription_plan"
+        "none": "subscription_plan",
+        "failed": "subscription_plan",
+        "unknown": "subscription_plan",
     },
 )
 
 workflow.add_edge("subscription_plan", "subscribed")
 workflow.add_edge("subscribed", "user_selection")
 
-# Branch user_selection into two paths
+# Branch selection
+def _route_sel(x: Dict) -> str:
+    sel = (x or {}).get("selection")
+    if sel == "image": return "image"
+    if sel == "report": return "report"
+    return "image"  # default
+
 workflow.add_conditional_edges(
     "user_selection",
-    lambda x: x["selection"],
+    _route_sel,
     {
         "image": "image_processing",
-        "report": "report_processing"
+        "report": "report_processing",
     },
 )
 
-# Both end afterwards
+# End
 workflow.add_edge("image_processing", END)
 workflow.add_edge("report_processing", END)
 

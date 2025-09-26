@@ -1,0 +1,12 @@
+2025-09-26 17:02:51,694 - auth_service - INFO - NODE-00: DB_INIT complete
+2025-09-26 17:04:19,806 - auth_service - INFO - NODE-02: user_registration -> SMTP not configured; printing email
+Your verification token is: MVMDwtGgZS9K1PBrejGjOw
+2025-09-26 17:17:02,476 - auth_service - INFO - NODE-00: DB_INIT complete
+2025-09-26 17:24:46,836 - auth_service - INFO - NODE-02: user_registration -> OTP email sent to arfith2906@gmail.com
+2025-09-26 17:29:45,398 - auth_service - INFO - NODE-00: DB_INIT complete
+2025-09-26 17:29:46,628 - auth_service - INFO - NODE-00: DB_INIT complete
+2025-09-26 17:31:24,945 - auth_service - INFO - NODE-00: DB_INIT complete
+2025-09-26 17:31:26,138 - auth_service - INFO - NODE-00: DB_INIT complete
+2025-09-26 17:31:41,456 - auth_service - INFO - NODE-00: DB_INIT complete
+2025-09-26 17:32:42,623 - auth_service - INFO - NODE-02: user_registration -> OTP email sent to arfith2906@gmail.com
+2025-09-26 17:36:52,215 - auth_service - INFO - NODE-02: user_registration -> OTP email sent to rithikgithub03@gmail.com

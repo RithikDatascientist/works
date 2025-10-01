@@ -45,9 +45,11 @@ def _get(path: str) -> Dict:
 # -------------------------
 # NODES
 # -------------------------
-def node_01_sign_up(state: Dict) -> Dict:
+
+# Node 1 : sign_up
+def sign_up(state: Dict) -> Dict:
     """
-    Node1: sign_up - New user registration via API.
+    New user registration via API.
     step1: Collect user details
     step2: Validate inputs (handled in API/UI)
     step3: Create new account and issue OTP
@@ -69,9 +71,10 @@ def node_01_sign_up(state: Dict) -> Dict:
         _logger.error("NODE-01: sign_up failed %s", e)
         return {"status": "failed", "flag": "no"}
 
-def node_02_user_registration(state: Dict) -> Dict:
+# Node 2 : user_registration
+def user_registration(state: Dict) -> Dict:
     """
-    Node2: user_registration - Confirm user registration via OTP.
+    Confirm user registration via OTP.
     step1: Send/collect verification token
     step2: Validate OTP
     step3: Mark user verified
@@ -89,9 +92,10 @@ def node_02_user_registration(state: Dict) -> Dict:
         _logger.error("NODE-02: user_registration failed %s", e)
         return {"registration_status": "failed", "flag": "no"}
 
-def node_03_sign_in(state: Dict) -> Dict:
+# Node 3 : sign_in
+def sign_in(state: Dict) -> Dict:
     """
-    Node3: sign_in - Existing user login via API.
+    Existing user login via API.
     step1: Collect credentials
     step2: Validate credentials
     step3: Log authentication status
@@ -109,9 +113,10 @@ def node_03_sign_in(state: Dict) -> Dict:
         _logger.error("NODE-03: sign_in failed %s", e)
         return {"login_status": "failed", "flag": "no"}
 
-def node_04_forgot_password(state: Dict) -> Dict:
+# Node 4 : forgot_password
+def forgot_password(state: Dict) -> Dict:
     """
-    Node4: forgot_password - Reset password using API.
+    Password reset via API.
     step1: Collect email/phone
     step2: Send reset token
     step3: Confirm reset (separate page)
@@ -126,19 +131,19 @@ def node_04_forgot_password(state: Dict) -> Dict:
         _logger.error("NODE-04: forgot_password failed %s", e)
         return {"password_reset": "failed", "flag": "no"}
 
-def node_05_user_login_validation(state: Dict) -> Dict:
-    """
-    Node5: user_login_validation - Validate login and session.
-    """
+# Node 5 : user_login_validation
+def user_login_validation(state: Dict) -> Dict:
+    """Validate login and session."""
     if state.get("login_status") == "success":
         _logger.info("NODE-05: user_login_validation -> session active")
         return {"session": "active", "flag": "yes"}
     _logger.info("NODE-05: user_login_validation -> inactive")
     return {"session": "inactive", "flag": "no"}
 
-def node_06_subscription_validation(state: Dict) -> Dict:
+# Node 6 : subscription_validation
+def subscription_validation(state: Dict) -> Dict:
     """
-    Node6: subscription_validation - Check subscription via API.
+    Check subscription via API.
     step1: Fetch subscription
     step2: Determine status (active/none)
     """
@@ -156,9 +161,10 @@ def node_06_subscription_validation(state: Dict) -> Dict:
         _logger.error("NODE-06: subscription_validation failed %s", e)
         return {"subscription": "failed", "flag": "no"}
 
-def node_07_subscription_plan(state: Dict) -> Dict:
+# Node 7 : subscription_plan
+def subscription_plan(state: Dict) -> Dict:
     """
-    Node7: subscription_plan - handle plan purchase/renewal (UI-driven).
+    Handle plan purchase/renewal (UI-driven).
     This node acknowledges routing to UI for upgrade; API call happens from UI.
     """
     if state.get("flag") != "yes":
@@ -167,20 +173,18 @@ def node_07_subscription_plan(state: Dict) -> Dict:
     _logger.info("NODE-07: subscription_plan -> awaiting UI upgrade flow")
     return {"subscription_status": "pending", "flag": "yes"}
 
-def node_08_subscribed(state: Dict) -> Dict:
-    """
-    Node8: subscribed - Confirm subscription active and grant access.
-    """
+# Node 8 : subscribed
+def subscribed(state: Dict) -> Dict:
+    """Confirm subscription active and grant access."""
     if state.get("flag") != "yes":
         _logger.info("NODE-08: subscribed -> denied")
         return {"access": "denied", "flag": "no"}
     _logger.info("NODE-08: subscribed -> granted")
     return {"access": "granted", "flag": "yes"}
 
-def node_09_user_selection(state: Dict) -> Dict:
-    """
-    Node9: user_selection - route to selected workflow.
-    """
+# Node 9 : user_selection
+def user_selection(state: Dict) -> Dict:
+    """Route to selected workflow."""
     if state.get("flag") != "yes":
         _logger.info("NODE-09: user_selection -> skipped")
         return {"selection": None, "flag": "no"}
@@ -188,10 +192,9 @@ def node_09_user_selection(state: Dict) -> Dict:
     _logger.info("NODE-09: user_selection -> %s", choice)
     return {"selection": choice, "flag": "yes"}
 
-def node_10_image_processing(state: Dict) -> Dict:
-    """
-    Node10: image_processing - record feature usage via API.
-    """
+# Node 10 : image_processing
+def image_processing(state: Dict) -> Dict:
+    """Record image feature usage via API."""
     if state.get("flag") != "yes":
         _logger.info("NODE-10: image_processing -> skipped")
         return {"task": "not_processed", "flag": "no"}
@@ -204,10 +207,9 @@ def node_10_image_processing(state: Dict) -> Dict:
         _logger.error("NODE-10: image_processing failed %s", e)
         return {"task": "failed", "flag": "no"}
 
-def node_11_report_processing(state: Dict) -> Dict:
-    """
-    Node11: report_processing - record feature usage via API.
-    """
+# Node 11 : report_processing
+def report_processing(state: Dict) -> Dict:
+    """Record report feature usage via API."""
     if state.get("flag") != "yes":
         _logger.info("NODE-11: report_processing -> skipped")
         return {"task": "not_processed", "flag": "no"}
@@ -225,18 +227,18 @@ def node_11_report_processing(state: Dict) -> Dict:
 # -------------------------
 workflow = StateGraph(dict)
 
-# Add nodes with explicit numbering in identifiers
-workflow.add_node("sign_up", node_01_sign_up)                    # Node1
-workflow.add_node("user_registration", node_02_user_registration) # Node2
-workflow.add_node("sign_in", node_03_sign_in)                    # Node3
-workflow.add_node("forgot_password", node_04_forgot_password)    # Node4
-workflow.add_node("user_login_validation", node_05_user_login_validation)  # Node5
-workflow.add_node("subscription_validation", node_06_subscription_validation)  # Node6
-workflow.add_node("subscription_plan", node_07_subscription_plan) # Node7
-workflow.add_node("subscribed", node_08_subscribed)              # Node8
-workflow.add_node("user_selection", node_09_user_selection)      # Node9
-workflow.add_node("image_processing", node_10_image_processing)  # Node10
-workflow.add_node("report_processing", node_11_report_processing) # Node11
+# Register nodes
+workflow.add_node("sign_up", sign_up)                              # Node1
+workflow.add_node("user_registration", user_registration)          # Node2
+workflow.add_node("sign_in", sign_in)                              # Node3
+workflow.add_node("forgot_password", forgot_password)              # Node4
+workflow.add_node("user_login_validation", user_login_validation)  # Node5
+workflow.add_node("subscription_validation", subscription_validation)  # Node6
+workflow.add_node("subscription_plan", subscription_plan)          # Node7
+workflow.add_node("subscribed", subscribed)                        # Node8
+workflow.add_node("user_selection", user_selection)                # Node9
+workflow.add_node("image_processing", image_processing)            # Node10
+workflow.add_node("report_processing", report_processing)          # Node11
 
 # Edges
 workflow.add_edge("sign_up", "user_registration")

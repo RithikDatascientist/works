@@ -74,14 +74,16 @@ def consume_verify_token(email: str, token: str) -> bool:
     def as_utc(dt):
         return dt if getattr(dt, "tzinfo", None) else dt.replace(tzinfo=timezone.utc)
 
-    expires_at = datetime.now(timezone.utc) + timedelta(minutes=15)
+    expires_at = as_utc(rec["expires_at"])   # <-- use stored expiry
     now_utc = datetime.now(timezone.utc)
 
     if expires_at < now_utc:
         db.verify_tokens.delete_many({"email": email})
         return False
+
     db.verify_tokens.delete_many({"email": email})
     return True
+
 
 def create_reset_token(email: str, ttl_min: int = 15) -> Dict[str, Any]:
     token = secrets.token_urlsafe(16)

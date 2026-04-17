@@ -1,3 +1,7 @@
 .ipynb_checkpoints
 data
 regularization*.csv
+*.csv
+data/
+__pycache__/
+*.log

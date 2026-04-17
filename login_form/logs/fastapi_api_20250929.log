@@ -1,0 +1,17 @@
+2025-09-29 20:48:52,746 - fastapi_api - INFO - NODE-03/05: sign_in/user_login_validation -> login attempt arfith2906@gmail.com
+2025-09-29 20:49:39,865 - fastapi_api - INFO - NODE-03/05: sign_in/user_login_validation -> login attempt 1234567890
+2025-09-29 20:50:06,041 - fastapi_api - INFO - NODE-03/05: sign_in/user_login_validation -> login attempt 9876543210
+2025-09-29 20:51:31,596 - fastapi_api - INFO - NODE-04: forgot_password -> request rithikgithub03@gmail.com
+2025-09-29 20:53:11,728 - fastapi_api - INFO - NODE-03/05: sign_in/user_login_validation -> login attempt rithikgithub03@gmail.com
+2025-09-29 20:53:19,141 - fastapi_api - INFO - NODE-03/05: sign_in/user_login_validation -> login attempt rithikgithub03@gmail.com
+2025-09-29 20:53:21,249 - fastapi_api - INFO - NODE-06/08: subscription_validation/subscribed -> get sub for 68d681d86329a50d0c69d32d
+2025-09-29 20:53:23,285 - fastapi_api - INFO - NODE-09: user_selection -> usage for 68d681d86329a50d0c69d32d
+2025-09-29 20:53:31,965 - fastapi_api - INFO - NODE-06/08: subscription_validation/subscribed -> get sub for 68d681d86329a50d0c69d32d
+2025-09-29 20:53:34,009 - fastapi_api - INFO - NODE-09: user_selection -> usage for 68d681d86329a50d0c69d32d
+2025-09-29 20:54:29,519 - fastapi_api - INFO - NODE-10/11: feature -> report for 68d681d86329a50d0c69d32d
+2025-09-29 20:59:41,834 - fastapi_api - INFO - NODE-06/08: subscription_validation/subscribed -> get sub for 68d681d86329a50d0c69d32d
+2025-09-29 20:59:43,815 - fastapi_api - INFO - NODE-08: subscribed -> logout user_id=68d681d86329a50d0c69d32d
+2025-09-29 20:59:43,883 - fastapi_api - INFO - NODE-09: user_selection -> usage for 68d681d86329a50d0c69d32d
+2025-09-29 20:59:55,339 - fastapi_api - INFO - NODE-03/05: sign_in/user_login_validation -> login attempt arfith2906@gmail.com
+2025-09-29 20:59:57,467 - fastapi_api - INFO - NODE-06/08: subscription_validation/subscribed -> get sub for 68d680df6329a50d0c69d32b
+2025-09-29 20:59:59,520 - fastapi_api - INFO - NODE-09: user_selection -> usage for 68d680df6329a50d0c69d32b

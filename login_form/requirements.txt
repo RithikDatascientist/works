@@ -1,0 +1,27 @@
+# Core app servers and APIs
+fastapi==0.115.*        # API used by UI pages and graph nodes [Streamlit calls /auth/*, /plans, /user/*] [Attached: streamlit_app.py, fastapi_client.py]
+uvicorn[standard]==0.30.*  # ASGI server for FastAPI [Attached: fastapi_client.py]
+
+# Validation and requests
+pydantic==2.9.*         # UI-side and server-side validation; EmailStr, length checks [Attached: streamlit_app.py, fastapi_client.py]
+email-validator==2.2.*  # Required by Pydantic EmailStr [Attached: streamlit_app.py]
+requests==2.32.*        # HTTP client used by Streamlit and LangGraph to call the API [Attached: streamlit_app.py, lang_graph_flow.py]
+
+# Frontend/UI
+streamlit==1.38.*       # Primary UI framework with forms/pages mapped to nodes [Attached: streamlit_app.py]
+pillow==10.4.*          # Image preview support in Streamlit image page [Attached: streamlit_app.py]
+
+# Graph engine
+langgraph==0.2.*        # StateGraph/END used in the workflow controller [Attached: lang_graph_flow.py]
+langchain==0.3.*        # LangGraph compatible dependency layer for tools/chains [Attached: lang_graph_flow.py]
+
+# Data layer
+pymongo==4.8.*          # MongoDB client for users/subscriptions DBs, indexes, and usage logs [Attached: setup_database.py]
+
+# Utilities
+typing-extensions==4.12.*  # Back-compat typing used by several libs [Attached: streamlit_app.py]
+python-dotenv==1.0.*        # Optional: load env vars for API base URL/SMTP/DB URIs [Attached: fastapi_client.py]
+
+# Optional verification / MCP tooling (enable if flows are used)
+selenium==4.24.*        # Optional: browser-based verification hook if enabled later [Attached: data_dictionary.xlsx]
+mcp==1.1.*              # Optional: MCP server utilities referenced in tools module [Attached: mcp_auth_tools.py]

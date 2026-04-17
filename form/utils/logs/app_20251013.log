@@ -1,0 +1,268 @@
+2025-10-13 12:10:19,682 - INFO - app - NODE-00: DB_INIT users db ready
+2025-10-13 12:10:19,712 - INFO - app - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-13 12:12:21,300 - INFO - app - Email sent to arfith2906@gmail.com subject='Password reset token'
+2025-10-13 12:12:21,301 - INFO - app - NODE-04: forgot_password -> issued reset token for arfith2906@gmail.com
+2025-10-13 12:12:57,489 - INFO - app - NODE-04: reset_password for arfith2906@gmail.com
+2025-10-13 12:13:05,774 - INFO - app - NODE-05: user_login_validation -> login counted for 68d680df6329a50d0c69d32b
+2025-10-13 12:13:28,386 - INFO - app - NODE-05: user_login_validation -> login counted for 68d680df6329a50d0c69d32b
+2025-10-13 12:13:39,152 - INFO - app - NODE-05: user_login_validation -> login counted for 68d680df6329a50d0c69d32b
+2025-10-13 12:16:12,123 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 12:16:18,334 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 12:17:01,614 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 12:17:03,712 - INFO - app - NODE-01: sign_up -> user created 68eca067119bde6c370b518d
+2025-10-13 12:17:03,714 - INFO - app - NODE-02: user_registration -> issued verify token for rithikgithub03@gmail.com
+2025-10-13 12:17:06,601 - INFO - app - Email sent to rithikgithub03@gmail.com subject='Verify your account'
+2025-10-13 12:17:06,641 - INFO - app - NODE-07: subscription_plan -> set plan pro for user 68eca067119bde6c370b518d
+2025-10-13 12:17:30,335 - INFO - app - NODE-02: user_registration -> verified rithikgithub03@gmail.com
+2025-10-13 12:17:46,943 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca067119bde6c370b518d
+2025-10-13 12:17:49,040 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca067119bde6c370b518d
+2025-10-13 12:17:51,093 - INFO - app - NODE-09: user_selection -> usage for 68eca067119bde6c370b518d
+2025-10-13 12:17:55,711 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca067119bde6c370b518d
+2025-10-13 12:17:57,762 - INFO - app - NODE-09: user_selection -> usage for 68eca067119bde6c370b518d
+2025-10-13 12:17:59,846 - INFO - app - NODE-10/11: feature used 'image' by 68eca067119bde6c370b518d
+2025-10-13 12:18:09,522 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca067119bde6c370b518d
+2025-10-13 12:18:11,602 - INFO - app - NODE-09: user_selection -> usage for 68eca067119bde6c370b518d
+2025-10-13 12:18:13,687 - INFO - app - NODE-08: subscribed -> logout user_id=68eca067119bde6c370b518d
+2025-10-13 12:18:28,033 - INFO - app - NODE-05: user_login_validation -> login counted for 68d680df6329a50d0c69d32b
+2025-10-13 12:30:48,676 - INFO - app - NODE-00: DB_INIT users db ready
+2025-10-13 12:30:48,680 - INFO - app - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-13 12:31:58,935 - INFO - app - NODE-00: DB_INIT users db ready
+2025-10-13 12:31:58,951 - INFO - app - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-13 12:32:00,094 - INFO - app - NODE-00: DB_INIT users db ready
+2025-10-13 12:32:00,098 - INFO - app - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-13 12:32:10,717 - INFO - app - NODE-00: DB_INIT users db ready
+2025-10-13 12:32:10,721 - INFO - app - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-13 12:32:34,793 - INFO - app - NODE-05: user_login_validation -> login counted for 68d680df6329a50d0c69d32b
+2025-10-13 12:34:35,549 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca067119bde6c370b518d
+2025-10-13 12:34:37,629 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca067119bde6c370b518d
+2025-10-13 12:34:39,681 - INFO - app - NODE-09: user_selection -> usage for 68eca067119bde6c370b518d
+2025-10-13 12:34:47,577 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca067119bde6c370b518d
+2025-10-13 12:34:49,642 - INFO - app - NODE-09: user_selection -> usage for 68eca067119bde6c370b518d
+2025-10-13 12:34:51,709 - INFO - app - NODE-10/11: feature used 'report' by 68eca067119bde6c370b518d
+2025-10-13 12:34:59,424 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca067119bde6c370b518d
+2025-10-13 12:35:01,487 - INFO - app - NODE-09: user_selection -> usage for 68eca067119bde6c370b518d
+2025-10-13 12:35:03,539 - INFO - app - NODE-08: subscribed -> logout user_id=68eca067119bde6c370b518d
+2025-10-13 12:35:06,746 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 12:35:28,558 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 12:35:45,369 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 12:35:47,432 - INFO - app - NODE-01: sign_up -> user created 68eca4cbfea4d1cc748c1481
+2025-10-13 12:35:47,433 - INFO - app - NODE-02: user_registration -> issued verify token for arfith2906@gmail.com
+2025-10-13 12:35:50,369 - INFO - app - Email sent to arfith2906@gmail.com subject='Verify your account'
+2025-10-13 12:35:50,372 - INFO - app - NODE-07: subscription_plan -> set plan free for user 68eca4cbfea4d1cc748c1481
+2025-10-13 12:36:05,620 - INFO - app - NODE-02: user_registration -> verified arfith2906@gmail.com
+2025-10-13 12:36:18,612 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:36:20,674 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:36:22,740 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:42:11,369 - INFO - app - NODE-00: DB_INIT users db ready
+2025-10-13 12:42:11,384 - INFO - app - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-13 12:42:43,731 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:42:45,806 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:42:47,856 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:42:49,896 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 12:42:55,815 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:42:57,874 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:42:59,938 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 12:43:04,593 - INFO - app - NODE-10/11: feature used 'image' by 68eca4cbfea4d1cc748c1481
+2025-10-13 12:43:14,862 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:43:16,921 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:43:19,001 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 12:43:24,988 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:43:25,715 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:43:27,049 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:43:27,795 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:43:29,856 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 12:43:31,910 - INFO - app - NODE-07: subscription_plan -> set plan basic for user 68eca4cbfea4d1cc748c1481
+2025-10-13 12:43:34,770 - INFO - app - Email sent to arfith2906@gmail.com subject='Plan upgraded'
+2025-10-13 12:46:01,685 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:46:03,746 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:46:05,788 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 12:46:07,869 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:46:09,949 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 12:46:12,030 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 13:03:01,495 - INFO - app - NODE-00: DB_INIT users db ready
+2025-10-13 13:03:01,499 - INFO - app - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-13 13:03:02,664 - INFO - app - NODE-00: DB_INIT users db ready
+2025-10-13 13:03:02,667 - INFO - app - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-13 13:03:08,945 - INFO - app - NODE-00: DB_INIT users db ready
+2025-10-13 13:03:08,960 - INFO - app - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-13 13:03:33,031 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:03:35,115 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:03:37,192 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:03:39,254 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 13:03:46,068 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:03:48,130 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:03:50,209 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 13:03:52,274 - INFO - app - NODE-07: subscription_plan -> set plan pro for user 68eca4cbfea4d1cc748c1481
+2025-10-13 13:03:55,361 - INFO - app - Email sent to arfith2906@gmail.com subject='Plan upgraded'
+2025-10-13 13:06:38,035 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:06:39,425 - INFO - app - NODE-00: DB_INIT users db ready
+2025-10-13 13:06:39,428 - INFO - app - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-13 13:06:40,651 - INFO - app - NODE-00: DB_INIT users db ready
+2025-10-13 13:06:40,668 - INFO - app - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-13 13:06:40,715 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:06:42,763 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:06:44,804 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 13:06:50,767 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:06:52,833 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:06:54,896 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 13:06:59,306 - INFO - app - NODE-10/11: feature used 'report' by 68eca4cbfea4d1cc748c1481
+2025-10-13 13:07:02,683 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:07:04,751 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:07:06,818 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 13:07:11,314 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:07:13,368 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:07:15,434 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 13:07:17,499 - INFO - app - NODE-07: subscription_plan -> set plan basic for user 68eca4cbfea4d1cc748c1481
+2025-10-13 13:07:20,476 - INFO - app - Email sent to arfith2906@gmail.com subject='Plan upgraded'
+2025-10-13 13:07:22,561 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:07:24,616 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:07:26,680 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 13:35:13,843 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:35:15,588 - INFO - app - NODE-00: DB_INIT users db ready
+2025-10-13 13:35:15,604 - INFO - app - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-13 13:35:15,919 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:35:17,967 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:35:20,027 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 13:35:25,553 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:35:27,598 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:35:29,655 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 13:35:35,829 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:35:37,883 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:35:39,947 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 13:35:48,631 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:35:50,691 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:35:52,761 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 13:35:57,941 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:35:59,974 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:36:02,028 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 13:36:04,095 - INFO - app - NODE-07: subscription_plan -> set plan pro for user 68eca4cbfea4d1cc748c1481
+2025-10-13 13:36:07,147 - INFO - app - Email sent to arfith2906@gmail.com subject='Plan upgraded'
+2025-10-13 13:36:09,213 - INFO - app - NODE-06/08: subscription_validation/subscribed -> get sub for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:36:10,376 - INFO - app - NODE-00: DB_INIT users db ready
+2025-10-13 13:36:10,379 - INFO - app - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-13 13:36:11,255 - INFO - app - NODE-09: user_selection -> usage for 68eca4cbfea4d1cc748c1481
+2025-10-13 13:36:13,311 - INFO - app - NODE-07: subscription_plan -> list_plans
+2025-10-13 13:36:35,145 - INFO - app - NODE-00: DB_INIT users db ready
+2025-10-13 13:36:35,148 - INFO - app - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-13 17:33:31,183 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca4cbfea4d1cc748c1481
+2025-10-13 17:33:31,183 - INFO - app - SIGN_IN: Login successful via MCP
+2025-10-13 17:33:31,184 - INFO - app - USER_LOGIN_VALIDATION: Session started successfully
+2025-10-13 17:33:31,187 - INFO - app - SUBSCRIPTION_VALIDATION: active
+2025-10-13 17:33:31,188 - INFO - app - SUBSCRIBED: Access granted
+2025-10-13 17:33:31,190 - INFO - app - USER_SELECTION: User selected None
+2025-10-13 17:33:31,193 - INFO - app - NODE-10/11: feature used 'report' by None
+2025-10-13 17:33:31,193 - INFO - app - REPORT_PROCESSING: Completed report processing workflow
+2025-10-13 17:34:09,727 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca4cbfea4d1cc748c1481
+2025-10-13 17:34:09,727 - INFO - app - SIGN_IN: Login successful via MCP
+2025-10-13 17:34:09,728 - INFO - app - USER_LOGIN_VALIDATION: Session started successfully
+2025-10-13 17:34:09,730 - INFO - app - SUBSCRIPTION_VALIDATION: active
+2025-10-13 17:34:09,731 - INFO - app - SUBSCRIBED: Access granted
+2025-10-13 17:34:09,732 - INFO - app - USER_SELECTION: User selected None
+2025-10-13 17:34:09,737 - INFO - app - NODE-10/11: feature used 'report' by None
+2025-10-13 17:34:09,737 - INFO - app - REPORT_PROCESSING: Completed report processing workflow
+2025-10-13 17:34:21,789 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca067119bde6c370b518d
+2025-10-13 17:34:21,789 - INFO - app - SIGN_IN: Login successful via MCP
+2025-10-13 17:34:21,790 - INFO - app - USER_LOGIN_VALIDATION: Session started successfully
+2025-10-13 17:34:21,792 - INFO - app - SUBSCRIPTION_VALIDATION: active
+2025-10-13 17:34:21,794 - INFO - app - SUBSCRIBED: Access granted
+2025-10-13 17:34:21,795 - INFO - app - USER_SELECTION: User selected None
+2025-10-13 17:34:21,798 - INFO - app - NODE-10/11: feature used 'report' by None
+2025-10-13 17:34:21,798 - INFO - app - REPORT_PROCESSING: Completed report processing workflow
+2025-10-13 17:43:39,353 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca4cbfea4d1cc748c1481
+2025-10-13 17:43:39,354 - INFO - app - SIGN_IN: Login successful via MCP
+2025-10-13 17:43:39,354 - INFO - app - USER_LOGIN_VALIDATION: Session started successfully
+2025-10-13 17:43:39,357 - INFO - app - SUBSCRIPTION_VALIDATION: active
+2025-10-13 17:43:39,358 - INFO - app - SUBSCRIBED: Access granted
+2025-10-13 17:43:48,103 - INFO - app - USER_SELECTION: User selected image
+2025-10-13 17:43:48,104 - INFO - app - IMAGE_PROCESSING: Missing user_id
+2025-10-13 17:59:55,724 - INFO - app - START_ROUTER: start_at=sign_in
+2025-10-13 17:59:55,731 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca4cbfea4d1cc748c1481
+2025-10-13 17:59:55,731 - INFO - app - SIGN_IN: ok
+2025-10-13 17:59:55,733 - INFO - app - USER_LOGIN_VALIDATION: active
+2025-10-13 17:59:55,736 - INFO - app - SUBSCRIPTION_VALIDATION: active
+2025-10-13 17:59:55,738 - INFO - app - SUBSCRIBED: granted
+2025-10-13 17:59:55,739 - INFO - app - USER_SELECTION: missing user_id
+2025-10-13 17:59:55,741 - INFO - app - REPORT_PROCESSING: skipped
+2025-10-13 17:59:57,422 - INFO - app - START_ROUTER: start_at=sign_in
+2025-10-13 17:59:57,425 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca4cbfea4d1cc748c1481
+2025-10-13 17:59:57,426 - INFO - app - SIGN_IN: ok
+2025-10-13 17:59:57,426 - INFO - app - USER_LOGIN_VALIDATION: active
+2025-10-13 17:59:57,429 - INFO - app - SUBSCRIPTION_VALIDATION: active
+2025-10-13 17:59:57,430 - INFO - app - SUBSCRIBED: granted
+2025-10-13 17:59:57,431 - INFO - app - USER_SELECTION: missing user_id
+2025-10-13 17:59:57,432 - INFO - app - REPORT_PROCESSING: skipped
+2025-10-13 18:06:41,368 - INFO - app - START_ROUTER: start_at=sign_in
+2025-10-13 18:06:41,377 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca4cbfea4d1cc748c1481
+2025-10-13 18:06:41,377 - INFO - app - SIGN_IN: ok
+2025-10-13 18:06:41,379 - INFO - app - USER_LOGIN_VALIDATION: active
+2025-10-13 18:06:41,382 - INFO - app - SUBSCRIPTION_VALIDATION: active
+2025-10-13 18:06:41,384 - INFO - app - SUBSCRIBED: granted
+2025-10-13 18:06:45,190 - INFO - app - START_ROUTER: start_at=user_selection
+2025-10-13 18:06:45,191 - INFO - app - USER_SELECTION: missing user_id
+2025-10-13 18:06:45,193 - INFO - app - REPORT_PROCESSING: skipped
+2025-10-13 18:06:50,086 - INFO - app - START_ROUTER: start_at=user_selection
+2025-10-13 18:06:50,088 - INFO - app - USER_SELECTION: missing user_id
+2025-10-13 18:06:50,089 - INFO - app - REPORT_PROCESSING: skipped
+2025-10-13 18:07:02,482 - INFO - app - START_ROUTER: start_at=subscription_plan
+2025-10-13 18:07:02,483 - INFO - app - SUBSCRIPTION_PLAN: pending
+2025-10-13 18:07:02,484 - INFO - app - SUBSCRIBED: granted
+2025-10-13 18:07:12,022 - INFO - app - START_ROUTER: start_at=subscription_plan
+2025-10-13 18:07:12,023 - INFO - app - SUBSCRIPTION_PLAN: pending
+2025-10-13 18:07:12,024 - INFO - app - SUBSCRIBED: granted
+2025-10-13 18:07:19,367 - INFO - app - START_ROUTER: start_at=subscription_plan
+2025-10-13 18:07:19,368 - INFO - app - SUBSCRIPTION_PLAN: pending
+2025-10-13 18:07:19,369 - INFO - app - SUBSCRIBED: granted
+2025-10-13 18:15:15,233 - INFO - app - START_ROUTER: start_at=sign_in
+2025-10-13 18:15:15,256 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca4cbfea4d1cc748c1481
+2025-10-13 18:15:15,256 - INFO - app - SIGN_IN: ok
+2025-10-13 18:15:15,257 - INFO - app - USER_LOGIN_VALIDATION: active
+2025-10-13 18:15:15,260 - INFO - app - SUBSCRIPTION_VALIDATION: active
+2025-10-13 18:15:15,261 - INFO - app - SUBSCRIBED: granted
+2025-10-13 18:15:20,289 - INFO - app - START_ROUTER: start_at=subscription_plan
+2025-10-13 18:15:20,290 - INFO - app - SUBSCRIPTION_PLAN: pending
+2025-10-13 18:15:20,291 - INFO - app - SUBSCRIBED: granted
+2025-10-13 18:15:25,994 - INFO - app - START_ROUTER: start_at=subscription_plan
+2025-10-13 18:15:25,995 - INFO - app - SUBSCRIPTION_PLAN: pending
+2025-10-13 18:15:25,996 - INFO - app - SUBSCRIBED: granted
+2025-10-13 18:15:30,479 - INFO - app - START_ROUTER: start_at=subscription_plan
+2025-10-13 18:15:30,480 - INFO - app - SUBSCRIPTION_PLAN: pending
+2025-10-13 18:15:30,481 - INFO - app - SUBSCRIBED: granted
+2025-10-13 18:15:33,994 - INFO - app - START_ROUTER: start_at=user_selection
+2025-10-13 18:15:33,995 - INFO - app - USER_SELECTION: missing user_id
+2025-10-13 18:15:33,996 - INFO - app - REPORT_PROCESSING: skipped
+2025-10-13 18:21:36,647 - INFO - app - START_ROUTER: start_at=sign_in
+2025-10-13 18:21:36,653 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca4cbfea4d1cc748c1481
+2025-10-13 18:21:36,654 - INFO - app - SIGN_IN: ok
+2025-10-13 18:21:36,655 - INFO - app - USER_LOGIN_VALIDATION: active
+2025-10-13 18:21:36,657 - INFO - app - SUBSCRIPTION_VALIDATION: active
+2025-10-13 18:21:36,658 - INFO - app - SUBSCRIBED: granted
+2025-10-13 18:21:36,661 - INFO - app - START_ROUTER: start_at=subscription_validation
+2025-10-13 18:21:36,663 - INFO - app - SUBSCRIPTION_VALIDATION: active
+2025-10-13 18:21:36,665 - INFO - app - SUBSCRIBED: granted
+2025-10-13 18:21:58,417 - INFO - app - START_ROUTER: start_at=sign_in
+2025-10-13 18:21:58,421 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca4cbfea4d1cc748c1481
+2025-10-13 18:21:58,421 - INFO - app - SIGN_IN: ok
+2025-10-13 18:21:58,422 - INFO - app - USER_LOGIN_VALIDATION: active
+2025-10-13 18:21:58,425 - INFO - app - SUBSCRIPTION_VALIDATION: active
+2025-10-13 18:21:58,426 - INFO - app - SUBSCRIBED: granted
+2025-10-13 18:21:58,429 - INFO - app - START_ROUTER: start_at=subscription_validation
+2025-10-13 18:21:58,432 - INFO - app - SUBSCRIPTION_VALIDATION: active
+2025-10-13 18:21:58,434 - INFO - app - SUBSCRIBED: granted
+2025-10-13 18:22:08,396 - INFO - app - START_ROUTER: start_at=sign_in
+2025-10-13 18:22:08,400 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca4cbfea4d1cc748c1481
+2025-10-13 18:22:08,400 - INFO - app - SIGN_IN: ok
+2025-10-13 18:22:08,401 - INFO - app - USER_LOGIN_VALIDATION: active
+2025-10-13 18:22:08,404 - INFO - app - SUBSCRIPTION_VALIDATION: active
+2025-10-13 18:22:08,405 - INFO - app - SUBSCRIBED: granted
+2025-10-13 18:22:08,407 - INFO - app - START_ROUTER: start_at=subscription_validation
+2025-10-13 18:22:08,410 - INFO - app - SUBSCRIPTION_VALIDATION: active
+2025-10-13 18:22:08,412 - INFO - app - SUBSCRIBED: granted
+2025-10-13 18:22:14,639 - INFO - app - START_ROUTER: start_at=sign_in
+2025-10-13 18:22:14,642 - INFO - app - NODE-05: user_login_validation -> login counted for 68eca067119bde6c370b518d
+2025-10-13 18:22:14,642 - INFO - app - SIGN_IN: ok
+2025-10-13 18:22:14,643 - INFO - app - USER_LOGIN_VALIDATION: active
+2025-10-13 18:22:14,646 - INFO - app - SUBSCRIPTION_VALIDATION: active
+2025-10-13 18:22:14,648 - INFO - app - SUBSCRIBED: granted
+2025-10-13 18:22:14,651 - INFO - app - START_ROUTER: start_at=subscription_validation
+2025-10-13 18:22:14,653 - INFO - app - SUBSCRIPTION_VALIDATION: active
+2025-10-13 18:22:14,655 - INFO - app - SUBSCRIBED: granted

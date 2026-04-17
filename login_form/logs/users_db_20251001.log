@@ -1,0 +1,23 @@
+2025-10-01 12:34:44,700 - users_db - INFO - NODE-00: DB_INIT users db ready
+2025-10-01 12:43:10,069 - users_db - INFO - NODE-01: sign_up -> user created 68dcd4863db9873c6df9f97e
+2025-10-01 12:43:10,107 - users_db - INFO - NODE-02: user_registration -> issued verify token for rk2320@srmist.edu.in
+2025-10-01 12:44:42,570 - users_db - INFO - NODE-02: user_registration -> set verified for rk2320@srmist.edu.in matched=1
+2025-10-01 12:46:20,631 - users_db - INFO - NODE-04: forgot_password -> issued reset token for arfith2906@gmail.com
+2025-10-01 12:47:17,321 - users_db - INFO - NODE-04: forgot_password -> password updated for arfith2906@gmail.com matched=1
+2025-10-01 12:57:12,873 - users_db - INFO - NODE-00: DB_INIT users db ready
+2025-10-01 12:57:14,111 - users_db - INFO - NODE-00: DB_INIT users db ready
+2025-10-01 12:57:31,773 - users_db - INFO - NODE-00: DB_INIT users db ready
+2025-10-01 12:58:18,797 - users_db - INFO - NODE-04: forgot_password -> issued reset token for arfith2906@gmail.com
+2025-10-01 12:59:24,010 - users_db - INFO - NODE-04: forgot_password -> password updated for arfith2906@gmail.com matched=1
+2025-10-01 13:00:12,508 - users_db - INFO - NODE-04: forgot_password -> issued reset token for rk2320@srmist.edu.in
+2025-10-01 13:01:31,172 - users_db - INFO - NODE-04: forgot_password -> password updated for rk2320@srmist.edu.in matched=1
+2025-10-01 13:07:08,680 - users_db - INFO - NODE-00: DB_INIT users db ready
+2025-10-01 13:12:05,113 - users_db - INFO - NODE-00: DB_INIT users db ready
+2025-10-01 13:17:05,810 - users_db - INFO - NODE-00: DB_INIT users db ready
+2025-10-01 13:18:07,689 - users_db - INFO - NODE-00: DB_INIT users db ready
+2025-10-01 13:18:17,542 - users_db - INFO - NODE-00: DB_INIT users db ready
+2025-10-01 13:18:50,120 - users_db - INFO - NODE-04: forgot_password -> issued reset token for rithikgithub03@gmail.com
+2025-10-01 13:23:12,988 - users_db - INFO - NODE-00: DB_INIT users db ready
+2025-10-01 13:23:15,126 - users_db - INFO - NODE-04: forgot_password -> issued reset token for rithikgithub03@gmail.com
+2025-10-01 13:27:32,427 - users_db - INFO - NODE-04: forgot_password -> issued reset token for rithikgithub03@gmail.com
+2025-10-01 13:28:03,873 - users_db - INFO - NODE-04: forgot_password -> password updated for rithikgithub03@gmail.com matched=1

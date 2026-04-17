@@ -1,0 +1,20 @@
+2025-10-01 12:34:44,744 - auth_service - INFO - NODE-00: DB_INIT complete
+2025-10-01 12:43:10,107 - auth_service - INFO - NODE-02: user_registration -> SMTP not configured; printing email
+Your verification token is: 0IAB3w98Ao3Jm6N-BNXJ9A
+2025-10-01 12:46:20,631 - auth_service - INFO - NODE-02: user_registration -> SMTP not configured; printing email
+Your reset token is: yCS0CSZaht8fSg8CLX15WA
+2025-10-01 12:57:12,902 - auth_service - INFO - NODE-00: DB_INIT complete
+2025-10-01 12:57:14,115 - auth_service - INFO - NODE-00: DB_INIT complete
+2025-10-01 12:57:31,776 - auth_service - INFO - NODE-00: DB_INIT complete
+2025-10-01 12:58:21,902 - auth_service - INFO - NODE-02: user_registration -> OTP email sent to arfith2906@gmail.com
+2025-10-01 13:00:15,369 - auth_service - INFO - NODE-02: user_registration -> OTP email sent to rk2320@srmist.edu.in
+2025-10-01 13:07:08,695 - auth_service - INFO - NODE-00: DB_INIT complete
+2025-10-01 13:12:05,117 - auth_service - INFO - NODE-00: DB_INIT complete
+2025-10-01 13:17:05,814 - auth_service - INFO - NODE-00: DB_INIT complete
+2025-10-01 13:18:07,705 - auth_service - INFO - NODE-00: DB_INIT complete
+2025-10-01 13:18:17,569 - auth_service - INFO - NODE-00: DB_INIT complete
+2025-10-01 13:18:50,120 - auth_service - INFO - NODE-02: user_registration -> SMTP not configured; printing email
+Your reset token is: 0BhgvGmhDQJ-VP8E2OFSRg
+2025-10-01 13:23:13,010 - auth_service - INFO - NODE-00: DB_INIT complete
+2025-10-01 13:23:18,732 - auth_service - INFO - NODE-02: user_registration -> OTP email sent to rithikgithub03@gmail.com
+2025-10-01 13:27:35,404 - auth_service - INFO - NODE-02: user_registration -> OTP email sent to rithikgithub03@gmail.com

@@ -1,0 +1,53 @@
+2025-10-01 12:35:05,820 - fastapi_api - INFO - NODE-03/05: sign_in/user_login_validation -> login attempt arfith2906@gmail.com
+2025-10-01 12:35:08,023 - fastapi_api - INFO - NODE-06/08: subscription_validation/subscribed -> get sub for 68d680df6329a50d0c69d32b
+2025-10-01 12:35:10,063 - fastapi_api - INFO - NODE-09: user_selection -> usage for 68d680df6329a50d0c69d32b
+2025-10-01 12:42:06,109 - fastapi_api - INFO - NODE-08: subscribed -> logout user_id=68d680df6329a50d0c69d32b
+2025-10-01 12:42:10,525 - fastapi_api - INFO - NODE-07: subscription_plan -> list_plans
+2025-10-01 12:42:15,532 - fastapi_api - INFO - NODE-07: subscription_plan -> list_plans
+2025-10-01 12:43:07,960 - fastapi_api - INFO - NODE-07: subscription_plan -> list_plans
+2025-10-01 12:43:10,041 - fastapi_api - INFO - NODE-01: sign_up -> request for rk2320@srmist.edu.in
+2025-10-01 12:44:42,564 - fastapi_api - INFO - NODE-02: user_registration -> verify rk2320@srmist.edu.in
+2025-10-01 12:45:01,731 - fastapi_api - INFO - NODE-03/05: sign_in/user_login_validation -> login attempt 112233445566
+2025-10-01 12:45:03,820 - fastapi_api - INFO - NODE-06/08: subscription_validation/subscribed -> get sub for 68dcd4863db9873c6df9f97e
+2025-10-01 12:45:05,874 - fastapi_api - INFO - NODE-09: user_selection -> usage for 68dcd4863db9873c6df9f97e
+2025-10-01 12:45:23,404 - fastapi_api - INFO - NODE-08: subscribed -> logout user_id=68dcd4863db9873c6df9f97e
+2025-10-01 12:45:56,750 - fastapi_api - INFO - NODE-04: forgot_password -> request arfith2906@gmail.com
+2025-10-01 12:46:20,627 - fastapi_api - INFO - NODE-04: forgot_password -> request arfith2906@gmail.com
+2025-10-01 12:47:17,318 - fastapi_api - INFO - NODE-04: forgot_password -> reset arfith2906@gmail.com
+2025-10-01 12:47:30,452 - fastapi_api - INFO - NODE-03/05: sign_in/user_login_validation -> login attempt arfith2906@gmail.com
+2025-10-01 12:47:32,540 - fastapi_api - INFO - NODE-06/08: subscription_validation/subscribed -> get sub for 68d680df6329a50d0c69d32b
+2025-10-01 12:47:34,596 - fastapi_api - INFO - NODE-09: user_selection -> usage for 68d680df6329a50d0c69d32b
+2025-10-01 12:57:52,088 - fastapi_api - INFO - NODE-04: forgot_password -> request arfith2906@gmail.com
+2025-10-01 12:58:04,844 - fastapi_api - INFO - NODE-04: forgot_password -> request arfith2906@gmail.com
+2025-10-01 12:58:18,794 - fastapi_api - INFO - NODE-04: forgot_password -> request arfith2906@gmail.com
+2025-10-01 12:59:24,008 - fastapi_api - INFO - NODE-04: forgot_password -> reset arfith2906@gmail.com
+2025-10-01 12:59:32,649 - fastapi_api - INFO - NODE-03/05: sign_in/user_login_validation -> login attempt arfith2906@gmail.com
+2025-10-01 12:59:34,747 - fastapi_api - INFO - NODE-06/08: subscription_validation/subscribed -> get sub for 68d680df6329a50d0c69d32b
+2025-10-01 12:59:36,791 - fastapi_api - INFO - NODE-09: user_selection -> usage for 68d680df6329a50d0c69d32b
+2025-10-01 12:59:41,317 - fastapi_api - INFO - NODE-08: subscribed -> logout user_id=68d680df6329a50d0c69d32b
+2025-10-01 13:00:12,505 - fastapi_api - INFO - NODE-04: forgot_password -> request rk2320@srmist.edu.in
+2025-10-01 13:01:31,168 - fastapi_api - INFO - NODE-04: forgot_password -> reset rk2320@srmist.edu.in
+2025-10-01 13:01:45,353 - fastapi_api - INFO - NODE-03/05: sign_in/user_login_validation -> login attempt 112233445566
+2025-10-01 13:01:47,460 - fastapi_api - INFO - NODE-06/08: subscription_validation/subscribed -> get sub for 68dcd4863db9873c6df9f97e
+2025-10-01 13:01:49,534 - fastapi_api - INFO - NODE-09: user_selection -> usage for 68dcd4863db9873c6df9f97e
+2025-10-01 13:01:59,744 - fastapi_api - INFO - NODE-06/08: subscription_validation/subscribed -> get sub for 68dcd4863db9873c6df9f97e
+2025-10-01 13:02:01,798 - fastapi_api - INFO - NODE-09: user_selection -> usage for 68dcd4863db9873c6df9f97e
+2025-10-01 13:02:03,884 - fastapi_api - INFO - NODE-09: user_selection -> usage for 68dcd4863db9873c6df9f97e
+2025-10-01 13:12:03,863 - fastapi_api - INFO - NODE-09: user_selection -> usage for 68dcd4863db9873c6df9f97e
+2025-10-01 13:12:05,978 - fastapi_api - INFO - NODE-06/08: subscription_validation/subscribed -> get sub for 68dcd4863db9873c6df9f97e
+2025-10-01 13:12:08,025 - fastapi_api - INFO - NODE-09: user_selection -> usage for 68dcd4863db9873c6df9f97e
+2025-10-01 13:12:19,250 - fastapi_api - INFO - NODE-08: subscribed -> logout user_id=68dcd4863db9873c6df9f97e
+2025-10-01 13:13:12,041 - fastapi_api - INFO - NODE-03/05: sign_in/user_login_validation -> login attempt arfith2906@gmail.com
+2025-10-01 13:13:14,131 - fastapi_api - INFO - NODE-06/08: subscription_validation/subscribed -> get sub for 68d680df6329a50d0c69d32b
+2025-10-01 13:13:16,180 - fastapi_api - INFO - NODE-09: user_selection -> usage for 68d680df6329a50d0c69d32b
+2025-10-01 13:13:22,235 - fastapi_api - INFO - NODE-06/08: subscription_validation/subscribed -> get sub for 68d680df6329a50d0c69d32b
+2025-10-01 13:13:24,295 - fastapi_api - INFO - NODE-09: user_selection -> usage for 68d680df6329a50d0c69d32b
+2025-10-01 13:13:37,564 - fastapi_api - INFO - NODE-10/11: feature -> image for 68d680df6329a50d0c69d32b
+2025-10-01 13:13:44,150 - fastapi_api - INFO - NODE-06/08: subscription_validation/subscribed -> get sub for 68d680df6329a50d0c69d32b
+2025-10-01 13:13:46,200 - fastapi_api - INFO - NODE-09: user_selection -> usage for 68d680df6329a50d0c69d32b
+2025-10-01 13:18:23,500 - fastapi_api - INFO - NODE-08: subscribed -> logout user_id=68d680df6329a50d0c69d32b
+2025-10-01 13:18:50,116 - fastapi_api - INFO - NODE-04: forgot_password -> request rithikgithub03@gmail.com
+2025-10-01 13:23:15,123 - fastapi_api - INFO - NODE-04: forgot_password -> request rithikgithub03@gmail.com
+2025-10-01 13:23:50,935 - fastapi_api - INFO - NODE-04: forgot_password -> reset rithikgithub03@gmail.com
+2025-10-01 13:27:32,425 - fastapi_api - INFO - NODE-04: forgot_password -> request rithikgithub03@gmail.com
+2025-10-01 13:28:03,869 - fastapi_api - INFO - NODE-04: forgot_password -> reset rithikgithub03@gmail.com

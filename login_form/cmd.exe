@@ -1,0 +1,1 @@
+python -m pip list --format=freeze | findstr /I /R "^fastapi== ^uvicorn== ^pydantic== ^email-validator== ^requests== ^streamlit== ^pillow== ^langgraph== ^langchain== ^pymongo== ^selenium== ^mcp== ^python-dotenv== ^typing-extensions=="

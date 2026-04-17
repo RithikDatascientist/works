@@ -1,0 +1,6 @@
+# Missing tenure have high correlation - tenure
+# Compliants have strong correlation for churn - Complains 
+# TEnure bracket 6_M has high correlation with churn - Tenure 6_M
+# Statisfaction rate has rever correlation i.e higher satification greater churn PCT - Statisfaction
+# Device Registered has monotonic relationship no of increase in device the churn rate increase eg 6 device has greater churn rate - Device_Registered
+# Warehouse to home distance this make an huge difference i.e lower the distance lower the churn rate higher the distance higher the churn rate - Whare_house_to_home 

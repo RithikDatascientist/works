@@ -1,0 +1,18 @@
+2025-10-01 12:34:44,744 - subs_db - INFO - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-01 12:35:05,924 - subs_db - INFO - NODE-05: user_login_validation -> login counted for 68d680df6329a50d0c69d32b
+2025-10-01 12:43:10,120 - subs_db - INFO - NODE-07: subscription_plan -> set plan pro for user 68dcd4863db9873c6df9f97e
+2025-10-01 12:45:01,735 - subs_db - INFO - NODE-05: user_login_validation -> login counted for 68dcd4863db9873c6df9f97e
+2025-10-01 12:47:30,457 - subs_db - INFO - NODE-05: user_login_validation -> login counted for 68d680df6329a50d0c69d32b
+2025-10-01 12:57:12,901 - subs_db - INFO - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-01 12:57:14,114 - subs_db - INFO - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-01 12:57:31,776 - subs_db - INFO - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-01 12:59:32,655 - subs_db - INFO - NODE-05: user_login_validation -> login counted for 68d680df6329a50d0c69d32b
+2025-10-01 13:01:45,357 - subs_db - INFO - NODE-05: user_login_validation -> login counted for 68dcd4863db9873c6df9f97e
+2025-10-01 13:07:08,695 - subs_db - INFO - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-01 13:12:05,117 - subs_db - INFO - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-01 13:13:12,044 - subs_db - INFO - NODE-05: user_login_validation -> login counted for 68d680df6329a50d0c69d32b
+2025-10-01 13:13:37,567 - subs_db - INFO - NODE-10/11: feature used 'image' by 68d680df6329a50d0c69d32b
+2025-10-01 13:17:05,813 - subs_db - INFO - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-01 13:18:07,705 - subs_db - INFO - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-01 13:18:17,569 - subs_db - INFO - NODE-06: subscription_validation -> subs db ready with seed plans
+2025-10-01 13:23:13,010 - subs_db - INFO - NODE-06: subscription_validation -> subs db ready with seed plans

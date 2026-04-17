@@ -1,0 +1,22 @@
+2025-10-01 12:35:03,764 - streamlit_ui - INFO - NODE-03: sign_in submit for arfith2906@gmail.com
+2025-10-01 12:43:07,973 - streamlit_ui - INFO - NODE-01: sign_up submit for rk2320@srmist.edu.in
+2025-10-01 12:44:40,503 - streamlit_ui - INFO - NODE-02: user_registration verify for rk2320@srmist.edu.in
+2025-10-01 12:44:59,663 - streamlit_ui - INFO - NODE-03: sign_in submit for 112233445566
+2025-10-01 12:45:54,683 - streamlit_ui - INFO - NODE-04: forgot_password request for arfith2906@gmail.com
+2025-10-01 12:46:18,585 - streamlit_ui - INFO - NODE-04: forgot_password request for arfith2906@gmail.com
+2025-10-01 12:47:15,261 - streamlit_ui - INFO - NODE-04: reset_password for arfith2906@gmail.com
+2025-10-01 12:47:28,397 - streamlit_ui - INFO - NODE-03: sign_in submit for arfith2906@gmail.com
+2025-10-01 12:57:50,018 - streamlit_ui - INFO - NODE-04: forgot_password request for arfith2906@gmail.com
+2025-10-01 12:58:02,795 - streamlit_ui - INFO - NODE-04: forgot_password request for arfith2906@gmail.com
+2025-10-01 12:58:16,743 - streamlit_ui - INFO - NODE-04: forgot_password request for arfith2906@gmail.com
+2025-10-01 12:59:21,934 - streamlit_ui - INFO - NODE-04: reset_password for arfith2906@gmail.com
+2025-10-01 12:59:30,568 - streamlit_ui - INFO - NODE-03: sign_in submit for arfith2906@gmail.com
+2025-10-01 13:00:10,463 - streamlit_ui - INFO - NODE-04: forgot_password request for rk2320@srmist.edu.in
+2025-10-01 13:01:29,113 - streamlit_ui - INFO - NODE-04: reset_password for rk2320@srmist.edu.in
+2025-10-01 13:01:43,282 - streamlit_ui - INFO - NODE-03: sign_in submit for 112233445566
+2025-10-01 13:13:10,009 - streamlit_ui - INFO - NODE-03: sign_in submit for arfith2906@gmail.com
+2025-10-01 13:18:48,064 - streamlit_ui - INFO - NODE-04: forgot_password request for rithikgithub03@gmail.com
+2025-10-01 13:23:13,070 - streamlit_ui - INFO - NODE-04: forgot_password request for rithikgithub03@gmail.com
+2025-10-01 13:23:48,885 - streamlit_ui - INFO - NODE-04: reset_password for rithikgithub03@gmail.com
+2025-10-01 13:27:30,378 - streamlit_ui - INFO - NODE-04: forgot_password request for rithikgithub03@gmail.com
+2025-10-01 13:28:01,828 - streamlit_ui - INFO - NODE-04: reset_password for rithikgithub03@gmail.com
